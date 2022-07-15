@@ -1,0 +1,49 @@
+.card {
+    @apply ml-48 w-[400px] mb-2 h-24;
+}
+
+.booking-shortcut-wrapper {
+    @apply p-4 transition-all duration-500 ease-in;
+}
+
+.add-admin-btn {
+    @apply bg-leafy py-3 px-4 border-leafy border rounded-full text-lg text-tea;
+}
+
+.add-admin-btn:hover {
+    @apply bg-tea text-leafy border-tea drop-shadow-2xl transition duration-300 ease-out;
+}
+
+.hospital {
+    @apply text-4xl text-cyanide px-2 font-semibold drop-shadow-xl;
+}
+
+.department {
+    @apply text-4xl px-2 font-semibold drop-shadow-xl;
+    color: #8c8c8c;
+}
+
+.hero {
+    width: 960px;
+    height: 800px;
+}
+
+.card-name {
+    @apply text-gray-600 text-lg font-medium leading-none;
+}
+
+.card-img {
+    @apply w-10 h-10 rounded-full mr-4;
+}
+
+.card-btn {
+    @apply text-right py-2 text-leafy text-xl font-mono;
+}
+
+.card-btn:hover {
+    @apply text-cyanide cursor-pointer;
+}
+
+.sub-title {
+    @apply ml-48 py-4 text-2xl text-leafy font-semibold font-sub;
+}

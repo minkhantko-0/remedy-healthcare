@@ -1,0 +1,7 @@
+#divChart {
+    @apply block w-[36rem] mr-48;
+}
+
+.sub-title {
+    @apply mr-48 py-4 text-2xl text-leafy font-semibold font-sub;
+}

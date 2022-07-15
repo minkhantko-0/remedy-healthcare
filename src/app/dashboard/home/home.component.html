@@ -1,0 +1,78 @@
+<div>
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <app-alert
+        (close)="onCloseAlert()"
+        *ngIf="error"
+        [message]="error"></app-alert>
+
+    <app-admin-dialog
+        (close)="onClose()"
+        *ngIf="isAddingAdmin"
+        [id]="generatedAdmin?.user_id"
+        [password]="generatedAdmin?.password"></app-admin-dialog>
+
+    <div class="booking-shortcut-wrapper">
+        <div class="flex justify-between items-center">
+            <div>
+                <span class="hospital"
+                    >REMEDY <span style="color: #61ca54">HEALTHCARE</span></span
+                >
+                <br />
+                <span class="department"> ADMINISTRATION DEPARTMENT</span>
+            </div>
+            <button
+                (click)="onAddAdmin()"
+                class="add-admin-btn"
+                tippy="Add Admin">
+                <i class="fa-solid fa-user-plus"></i>
+            </button>
+        </div>
+
+        <div class="mt-6 flex justify-between">
+            <div>
+                <h4 class="sub-title">Last Appointments</h4>
+
+                <div>
+                    <div
+                        *ngFor="let appointment of latestAppointments"
+                        class="card">
+                        <div class="flex justify-between">
+                            <div class="flex items-center">
+                                <img
+                                    alt="doctor-profile"
+                                    class="card-img"
+                                    src="{{ appointment.doctor.profile }}" />
+                                <div>
+                                    <p class="card-name">
+                                        {{ appointment.doctor.name }}
+                                    </p>
+                                    <p>Doctor</p>
+                                </div>
+                            </div>
+                            <div><i class="fa-solid fa-minus"></i></div>
+                            <div class="flex items-center justify-start">
+                                <img
+                                    alt="patient-profile"
+                                    class="card-img"
+                                    src="{{ appointment.patient.profile }}" />
+                                <div>
+                                    <p class="card-name">
+                                        {{ appointment.patient.name }}
+                                    </p>
+                                    <p>Patient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="card-btn" (click)="onViewAppointments()">See More >>></h4>
+            </div>
+            <img alt="" class="hero mx-8" src="assets/hero.jpg" />
+        </div>
+    </div>
+    <div class="flex justify-between">
+        <app-chart></app-chart>
+        <app-bar-chart></app-bar-chart>
+    </div>
+</div>

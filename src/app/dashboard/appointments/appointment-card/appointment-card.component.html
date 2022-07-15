@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="flex items-center justify-between">
+        <div class="flex items-center mb-4 mx-4">
+            <img
+                [src]="appointment?.doctor?.profile"
+                alt="doctor-profile"
+                class="profile" />
+            <div class="ml-4">
+                <p class="title">{{ appointment?.doctor?.name }}</p>
+                <p class="sub-title">{{ appointment?.doctor?.role }}</p>
+            </div>
+        </div>
+        <div><i class="fa-solid fa-minus"></i></div>
+        <div class="flex items-center mb-4 mx-4">
+            <img
+                [src]="appointment?.patient?.profile"
+                alt="patient-profile"
+                class="profile" />
+            <div class="ml-4">
+                <p class="title">
+                    {{ appointment?.patient?.name }}
+                </p>
+                <p class="sub-title">Patient</p>
+            </div>
+        </div>
+    </div>
+    <div class="title-sec">Appointment Info</div>
+    <div class="sub-title ml-10">
+        Date : {{ appointment?.createdAt | date }}
+    </div>
+    <div class="sub-title ml-10">Fee : {{ appointment?.fee }}</div>
+</div>

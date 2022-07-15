@@ -1,0 +1,49 @@
+<app-logout-confirm-dialog *ngIf="isLoggingOut" (close)="onCancel()"></app-logout-confirm-dialog>
+<div [ngClass]="collapsed ? 'sidenav-collapsed' : ''" class="side-nav">
+    <div class="logo-container">
+        <button (click)="toggleCollapse()" class="logo">
+            <img alt="" class="w-10" src="assets/logo.png" />
+        </button>
+        <h1 *ngIf="collapsed" class="logo-text">Remedy Healthcare</h1>
+        <button (click)="closeNavBar()" *ngIf="collapsed" class="close-btn">
+            <i class="fa-solid fa-xmark close-icon"></i>
+        </button>
+    </div>
+
+    <ul class="sidenav-nav flex flex-col">
+        <li *ngFor="let tabs of navTabs" class="sidenav-nav-item">
+            <a
+                *ngIf="!collapsed"
+                [routerLink]="tabs.routerLink"
+                [tippy]="tabs.name"
+                class="sidenav-nav-link"
+                placement="right"
+                routerLinkActive="active">
+                <i [class]="tabs.icon" class="sidenav-link-icon"></i>
+            </a>
+            <a
+                *ngIf="collapsed"
+                [routerLink]="tabs.routerLink"
+                class="sidenav-nav-link"
+                routerLinkActive="active">
+                <i [class]="tabs.icon" class="sidenav-link-icon"></i>
+                <span class="sidenav-link-text">{{ tabs.name }}</span>
+            </a>
+        </li>
+        <li (click)="onLogOut()" class="sidenav-nav-item">
+            <a
+                *ngIf="!collapsed"
+                class="sidenav-nav-link"
+                placement="right"
+                tippy="Log out">
+                <i
+                    class="sidenav-link-icon fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+            <a *ngIf="collapsed" class="sidenav-nav-link">
+                <i
+                    class="sidenav-link-icon fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="sidenav-link-text"> LogOut </span>
+            </a>
+        </li>
+    </ul>
+</div>

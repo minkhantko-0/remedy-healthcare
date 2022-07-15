@@ -1,0 +1,55 @@
+<div>
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <app-alert
+        (close)="onCloseAlert()"
+        *ngIf="error"
+        [message]="error"></app-alert>
+
+    <div class="header-button-wrapper">
+        <div>
+            <button (click)="onRegister()" class="register-btn">
+                Register New Patients <i class="fa-solid fa-user-plus"></i>
+            </button>
+        </div>
+
+        <div>
+            <form
+                #f="ngForm"
+                (ngSubmit)="onSearchPatients(f)"
+                class="flex items-center">
+                <input
+                    class="searchbar"
+                    name="searchContent"
+                    ngModel
+                    placeholder="Search Patients ... "
+                    required
+                    type="text" />
+
+                <button [disabled]="!f.valid" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <h3 class="info">
+            Remedy Hospital Is Currently Providing <br />Reliable Healthcare For
+            <span class="text-cyanide"> {{ patientCount }} </span>Patients
+        </h3>
+
+        <h4 (click)="onReload()" class="sub-title cursor-pointer">
+            Patients <i class="fa-solid fa-bed-pulse"></i>
+        </h4>
+
+        <div class="w-fll h-0.5 bg-leafy"></div>
+    </div>
+    <div>
+        <div class="flex flex-wrap h-[820px] overflow-y-auto">
+            <div *ngFor="let patient of results" class="mx-8 mt-12">
+                <app-patient-card [patient]="patient"></app-patient-card>
+            </div>
+        </div>
+    </div>
+    <div class="w-fll h-0.5 bg-leafy"></div>
+</div>

@@ -1,0 +1,190 @@
+<div>
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <app-alert
+        (close)="onCloseAlert()"
+        *ngIf="error"
+        [message]="error"></app-alert>
+
+    <h1 class="sub-title">Assigning A New Employee</h1>
+    <div class="card">
+        <form #f="ngForm" (ngSubmit)="onAssign(f)">
+            <div class="avatar-upload">
+                <div class="avatar-edit">
+                    <label class="cursor-pointer" for="profilePhoto">
+                        <i class="fa-solid fa-camera text-xl text-leafy"></i>
+                        <input
+                            (change)="onUpload($event)"
+                            accept=".png, .jpg, .jpeg"
+                            id="profilePhoto"
+                            name="profile"
+                            ngModel
+                            required
+                            type="file"
+                    /></label>
+                </div>
+                <div
+                    *ngIf="!imageUrl"
+                    class="avatar-preview"
+                    style="background: url('undefined')"></div>
+                <img
+                    *ngIf="imageUrl"
+                    [src]="imageUrl"
+                    alt="profile-photo"
+                    class="avatar-preview" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="name"
+                    name="name"
+                    ngModel
+                    placeholder="Name"
+                    required
+                    type="text" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="email"
+                    name="email"
+                    ngModel
+                    placeholder="Email"
+                    required
+                    type="email" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="address"
+                    name="address"
+                    ngModel
+                    placeholder="Address"
+                    required
+                    type="text" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="degree"
+                    name="degree"
+                    ngModel
+                    placeholder="Degree"
+                    required
+                    type="text" />
+            </div>
+            <div class="input-container">
+                <legend class="text-left ml-[10%]">Date of Birth:</legend>
+                <input
+                    class="text-input"
+                    id="date-of-birth"
+                    name="dateOfBirth"
+                    ngModel
+                    placeholder="DateOfBirth"
+                    required
+                    type="date" />
+            </div>
+            <div class="role-options">
+                <legend>Role :</legend>
+                <span>
+                    <input
+                        (ngModelChange)="onAssignDoctor(true)"
+                        name="role"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Doctor" />&nbsp;Doctor</span
+                >
+                <span>
+                    <input
+                        (ngModelChange)="onAssignDoctor(false)"
+                        name="role"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Nurse" />&nbsp;Nurse</span
+                >
+                <span>
+                    <input
+                        (ngModelChange)="onAssignDoctor(false)"
+                        name="role"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Rapid Response" />&nbsp;Rapid Response</span
+                >
+                <span>
+                    <input
+                        (ngModelChange)="onAssignDoctor(false)"
+                        name="role"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Security" />&nbsp;Security</span
+                >
+                <span>
+                    <input
+                        (ngModelChange)="onAssignDoctor(false)"
+                        name="role"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Social Worker" />&nbsp;Social Worker</span
+                >
+            </div>
+            <div *ngIf="isAssigningDoctor" class="input-container">
+                <legend class="text-left ml-[10%]">
+                    Appointment Fee (Kyats):
+                </legend>
+                <input
+                    class="text-input"
+                    id="appointment-fee"
+                    min="0"
+                    name="appointmentFee"
+                    ngModel
+                    placeholder="Consultation Fee"
+                    required
+                    type="number" />
+            </div>
+            <div *ngIf="isAssigningDoctor" class="input-container">
+                <legend class="text-left ml-[10%]">Daily Token Amount:</legend>
+                <input
+                    class="text-input"
+                    id="daily-token"
+                    max="5"
+                    min="1"
+                    name="tokenAmount"
+                    ngModel
+                    placeholder="Tokens"
+                    required
+                    type="number" />
+            </div>
+
+            <div class="check-box">
+                <label>Gender:</label>
+                <div class="check-option">
+                    <input
+                        name="gender"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Male" />
+
+                    <span class="ml-1">Male</span>
+                </div>
+                <div class="check-option">
+                    <input
+                        name="gender"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Female" />
+                    <span class="ml-1">Female</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <button [disabled]="!f.valid" class="assign-btn">Assign</button>
+            </div>
+        </form>
+    </div>
+</div>

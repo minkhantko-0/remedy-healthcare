@@ -1,0 +1,15 @@
+.booking-shortcut-wrapper {
+    @apply p-4 transition-all duration-500 ease-in flex justify-around;
+}
+
+.appt-input {
+    @apply px-2 py-2 ml-4;
+}
+
+.appt-btn {
+    @apply px-2 py-2 ml-4 text-xl rounded text-tea cursor-pointer bg-leafy hover:text-leafy hover:bg-tea transition ease-in delay-100 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:text-gray-100;
+}
+
+.sub-title {
+    @apply py-4 text-2xl text-leafy font-semibold font-sub;
+}

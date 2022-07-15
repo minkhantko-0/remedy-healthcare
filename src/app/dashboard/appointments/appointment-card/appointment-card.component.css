@@ -1,0 +1,19 @@
+.card {
+    @apply w-[30%] my-2 h-auto px-12;
+}
+
+.profile {
+    @apply w-20 h-20 rounded border border-leafy shadow-md;
+}
+
+.title {
+    @apply text-2xl text-leafy font-hee font-semibold;
+}
+
+.title-sec {
+    @apply text-xl text-cyanide font-hee font-semibold text-left ml-5 my-2;
+}
+
+.sub-title {
+    @apply text-xl text-gray-500 text-left;
+}

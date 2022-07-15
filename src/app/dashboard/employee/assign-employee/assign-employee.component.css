@@ -1,0 +1,51 @@
+.sub-title {
+    @apply mt-20 text-2xl text-leafy font-semibold font-sub relative left-1/4;
+}
+
+.card {
+    @apply relative w-2/4 left-1/4 mt-8;
+}
+
+#profilePhoto {
+    @apply hidden;
+}
+
+.avatar-upload {
+    @apply relative w-[140px] h-[140px];
+    margin: 24px auto auto;
+}
+
+.avatar-edit {
+    @apply absolute right-0 bottom-0;
+}
+
+.avatar-preview {
+    @apply w-[144px] h-[144px] rounded-full border-tea border-2;
+    background-size: cover !important;
+    background-position: 50% !important;
+    margin: 0 auto;
+}
+
+.input-container {
+    @apply mt-12 text-center;
+}
+
+.text-input {
+    @apply w-[80%];
+}
+
+.check-box {
+    @apply ml-[10%] mt-12;
+}
+
+.check-option {
+    @apply ml-[5%];
+}
+
+.assign-btn {
+    @apply px-4 py-2 mt-12 mb-8 text-xl text-tea cursor-pointer bg-leafy hover:text-leafy hover:bg-tea transition ease-in delay-100 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:text-gray-100 rounded-lg;
+}
+
+.role-options {
+    @apply mx-[10%] mt-12 flex justify-between;
+}

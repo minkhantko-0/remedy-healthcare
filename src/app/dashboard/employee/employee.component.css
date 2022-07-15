@@ -1,0 +1,23 @@
+.header-button-wrapper {
+    @apply flex items-center justify-between my-8 mx-12 text-xl transition-all ease-in-out duration-500;
+}
+
+.searchbar {
+    @apply text-tea bg-leafy placeholder-tea rounded-full ring-0 outline-0 border-tea border-2 focus:border-black focus:border-2 pr-12 pl-4 py-3;
+}
+
+.search-btn {
+    @apply mx-2 text-leafy hover:text-tea  transition ease-in delay-100 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:text-gray-400 bg-clip-text;
+}
+
+.assign-btn {
+    @apply py-2.5 px-4 text-xl text-tea cursor-pointer bg-leafy hover:text-leafy hover:bg-tea transition ease-in-out delay-100 drop-shadow-lg hover:drop-shadow-2xl rounded-md;
+}
+
+.sub-title {
+    @apply ml-16 mt-12 mb-4 p-2 pr-10 py-3 text-xl text-leafy font-semibold font-sub inline-block drop-shadow-xl border-leafy border rounded-md bg-slate-100 outline-none ring-0;
+}
+
+.options:checked {
+    @apply bg-leafy text-tea;
+}

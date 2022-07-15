@@ -1,0 +1,27 @@
+<div class="backdrop">
+    <div class="alert-box">
+        <i
+            class="fa-solid fa-triangle-exclamation text-yellow-500 text-3xl"></i>
+        <p class="p-4 text-leafy font-hee font-normal">{{ message }}</p>
+        <div>
+            <div class="admin-info">
+                <span> {{ id }}</span>
+                <i
+                    (click)="onCopyId()"
+                    class="fa-solid fa-copy cursor-pointer"
+                    tippy="Copy Admin ID"></i>
+            </div>
+
+            <div class="admin-info">
+                <span> {{ password }}</span>
+                <i
+                    (click)="onCopyPwd()"
+                    class="fa-solid fa-copy cursor-pointer"
+                    tippy="Copy Admin Password"></i>
+            </div>
+        </div>
+        <div class="alert-box-actions">
+            <button (click)="onClose()" class="cancel-btn">Close</button>
+        </div>
+    </div>
+</div>

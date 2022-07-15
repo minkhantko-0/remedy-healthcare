@@ -1,0 +1,10 @@
+<div (click)="onClose()" class="backdrop">
+    <div class="alert-box">
+        <i class="fa-solid fa-circle-info"></i>
+        <p class="p-4 text-leafy font-hee font-normal">{{ message }}</p>
+        <div class="alert-box-actions">
+            <button (click)="onConfirm()" class="confirm-btn">Confirm</button>
+            <button (click)="onClose()" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+</div>

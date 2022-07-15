@@ -1,0 +1,118 @@
+<div>
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <app-alert
+        (close)="onCloseAlert()"
+        *ngIf="error"
+        [message]="error"></app-alert>
+
+    <h1 class="sub-title">Registering A New Patient</h1>
+    <div class="card">
+        <form #f="ngForm" (ngSubmit)="onRegister(f)">
+            <div class="avatar-upload">
+                <div class="avatar-edit">
+                    <label class="cursor-pointer" for="profilePhoto">
+                        <i class="fa-solid fa-camera text-xl text-leafy"></i>
+                        <input
+                            (change)="onUpload($event)"
+                            accept=".png, .jpg, .jpeg"
+                            id="profilePhoto"
+                            name="profilePhoto"
+                            ngModel
+                            required
+                            type="file"
+                    /></label>
+                </div>
+                <div
+                    *ngIf="!imageUrl"
+                    class="avatar-preview"
+                    style="background: url('undefined')"></div>
+                <img
+                    *ngIf="imageUrl"
+                    [src]="imageUrl"
+                    alt="profile-photo"
+                    class="avatar-preview" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="name"
+                    name="name"
+                    ngModel
+                    placeholder="Name"
+                    required
+                    type="text" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="email"
+                    name="email"
+                    ngModel
+                    placeholder="Email"
+                    required
+                    type="email" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="address"
+                    name="address"
+                    ngModel
+                    placeholder="Address"
+                    required
+                    type="text" />
+            </div>
+            <div class="input-container">
+                <input
+                    class="text-input"
+                    id="diagnosis"
+                    name="diagnosis"
+                    ngModel
+                    placeholder="Diagnosis"
+                    required
+                    type="text" />
+            </div>
+            <div class="input-container">
+                <legend class="text-left ml-[10%]">Patient's Birthday:</legend>
+                <input
+                    class="text-input"
+                    id="date-of-birth"
+                    name="dateOfBirth"
+                    ngModel
+                    placeholder="DateOfBirth"
+                    required
+                    type="date" />
+            </div>
+            <div class="check-box">
+                <label>Gender:</label>
+                <div class="check-option">
+                    <input
+                        name="gender"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Male" />
+                    <span class="ml-1">Male</span>
+                </div>
+                <div class="check-option">
+                    <input
+                        name="gender"
+                        ngModel
+                        required
+                        type="radio"
+                        value="Female" />
+                    <span class="ml-1">Female</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <button
+                    [disabled]="!f.valid"
+                    class="register-btn"
+                    type="submit">
+                    Register
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

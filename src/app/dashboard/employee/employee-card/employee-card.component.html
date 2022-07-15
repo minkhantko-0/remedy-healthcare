@@ -1,0 +1,46 @@
+<app-terminate-confirm-dialog
+    (close)="onCancel()"
+    (confirm)="onConfirm(employee._id)"
+    *ngIf="isTerminating"></app-terminate-confirm-dialog>
+<app-loader *ngIf="isLoading"></app-loader>
+
+<app-alert (close)="onCloseAlert()" *ngIf="error" [message]="error"></app-alert>
+<div class="card">
+    <div class="card-header">
+        <div class="flex items-center mb-4">
+            <img
+                [src]="employee.profile"
+                alt="patient-profile"
+                class="profile" />
+            <div class="ml-4">
+                <p class="title">{{ employee.name }}</p>
+                <p class="sub-title">{{ employee.role }}</p>
+            </div>
+        </div>
+        <button class="text-2xl text-red-500">
+            <i
+                (click)="onTerminate()"
+                class="fa-solid fa-user-xmark"
+                tippy="Terminate"></i>
+        </button>
+    </div>
+    <p class="employee-info">
+        Degree:
+        <span class="employee-info">{{ employee.degree }}</span>
+    </p>
+
+    <p class="employee-info">
+        Address: <span class="employee-info"> {{ employee.address }}</span>
+    </p>
+
+    <p class="employee-info">
+        Email: <span class="employee-info">{{ employee.email }}</span>
+    </p>
+    <p class="employee-info">
+        Date of Birth:
+        <span class="employee-info">{{ employee.dateOfBirth }}</span>
+    </p>
+    <p class="employee-info">
+        Gender: <span class="employee-info">{{ employee.gender }}</span>
+    </p>
+</div>

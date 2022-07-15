@@ -1,0 +1,23 @@
+.backdrop {
+  @apply fixed top-0 left-0 w-screen h-screen bg-drop z-50;
+}
+
+.alert-box {
+  @apply fixed p-12 bg-white drop-shadow-xl text-3xl text-red-500 rounded-md font-medium text-center;
+  top: 35vh;
+  left: 40vw;
+  z-index: 100;
+  width: 20vw;
+}
+
+.alert-box-actions {
+  @apply w-full my-2 mt-8 flex justify-between;
+}
+
+.confirm-btn {
+  @apply px-4 py-2 rounded-md text-lg text-tea cursor-pointer bg-leafy hover:text-leafy hover:bg-tea transition ease-in delay-100;
+}
+
+.cancel-btn {
+  @apply px-4 py-2 rounded-md text-lg text-tea cursor-pointer bg-gray-700 hover:text-tea hover:bg-blue-500 transition ease-in delay-100;
+}

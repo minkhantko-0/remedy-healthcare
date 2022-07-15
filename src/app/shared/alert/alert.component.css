@@ -1,0 +1,19 @@
+.backdrop {
+    @apply fixed top-0 left-0 w-screen h-screen bg-drop z-50;
+}
+
+.alert-box {
+    @apply fixed p-12 bg-white drop-shadow-2xl text-3xl text-red-500 rounded-md font-medium text-center;
+    top: 35vh;
+    left: 37.5vw;
+    z-index: 100;
+    width: 25vw;
+}
+
+.alert-box-actions {
+    @apply w-full my-2 mt-8 text-right;
+}
+
+.register-btn {
+    @apply px-8 py-4 rounded-md text-xl text-tea cursor-pointer bg-leafy hover:text-leafy hover:bg-tea transition ease-in delay-100 text-center;
+}

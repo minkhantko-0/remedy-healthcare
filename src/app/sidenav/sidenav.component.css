@@ -1,0 +1,68 @@
+.side-nav {
+    @apply bg-leafy transition-all duration-500 ease-in-out z-[1] top-0 min-h-full h-screen  w-20;
+    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+}
+
+.logo-container {
+    @apply flex items-center w-full;
+    padding: 0.938rem 0.938rem 0 0.938rem;
+}
+
+.logo {
+    @apply bg-tea text-leafy text-center text-2xl font-black cursor-pointer border-none rounded-md;
+    min-width: 3rem;
+    padding: 0.313rem;
+}
+
+.logo-text {
+    @apply text-tea text-xl font-bold ml-6;
+}
+
+.close-btn {
+    @apply ml-auto cursor-pointer bg-transparent border-none h-8 w-8 rounded-full;
+}
+
+.fa-xmark {
+    @apply text-tea text-2xl;
+}
+
+.sidenav-collapsed {
+    width: 16.5625rem;
+}
+
+.sidenav-nav {
+    @apply m-0 flex flex-col items-center cursor-pointer;
+    padding: 0.938rem;
+    hieght: cal(100% -3.65rem);
+}
+
+.sidenav-nav-item {
+    @apply w-full mb-2.5;
+    border-radius: 0.625rem;
+}
+
+.sidenav-nav-item:hover {
+    @apply bg-tea;
+}
+
+.sidenav-nav-link {
+    @apply flex items-center h-12 text-tea no-underline transition-all duration-300 ease-out;
+}
+
+.sidenav-nav-link:hover {
+    @apply text-leafy;
+}
+
+.sidenav-link-icon {
+    @apply w-8 text-center my-0 mx-2;
+    font-size: 22px;
+    min-width: 2rem;
+}
+
+.sidenav-link-text {
+    @apply ml-6;
+}
+
+.active {
+    @apply text-leafy bg-tea rounded-md;
+}

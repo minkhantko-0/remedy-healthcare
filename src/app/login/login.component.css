@@ -1,0 +1,16 @@
+.login-card {
+    @apply w-full md:w-2/3 lg:w-2/4 xl:w-1/3 bg-slate-100 rounded-xl mx-auto px-4 py-4 border-2 border-slate-200 drop-shadow-2xl;
+}
+
+.login-input {
+    @apply p-4 my-10 w-3/4 text-leafy bg-tea placeholder-leafy rounded-md  border-tea border-2 focus:outline-0 focus:ring-0  focus:border-leafy focus:border-2;
+}
+
+h1 {
+    @apply mx-auto my-3 text-center text-4xl font-semibold text-leafy drop-shadow-xl;
+}
+
+button {
+    @apply px-8 py-4 mt-12 mb-8 rounded-full text-xl text-gray-100 cursor-pointer bg-leafy hover:text-leafy hover:bg-tea transition ease-in delay-100 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:text-gray-100;
+}
+

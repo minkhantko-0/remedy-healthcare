@@ -1,0 +1,47 @@
+<div class="h-screen w-100 bg-leafy">
+    <div class="container mx-auto pt-72">
+        <app-loader *ngIf="isLoading"></app-loader>
+
+        <app-alert
+            (close)="onCloseAlert()"
+            *ngIf="error"
+            [message]="error"></app-alert>
+
+        <div class="login-card">
+            <img alt="" class="mx-auto w-16 h-auto" src="assets/logo.png" />
+            <h1>Remedy Healthcare</h1>
+            <form
+                #f="ngForm"
+                (ngSubmit)="onSignIn(f)"
+                class="w-full flex flex-col items-center">
+                <input
+                    class="login-input"
+                    name="id"
+                    ngModel
+                    placeholder="Admin ID"
+                    required
+                    type="text" />
+
+                <input
+                    class="login-input"
+                    minlength="3"
+                    name="password"
+                    ngModel
+                    placeholder="Password"
+                    required
+                    type="password" />
+
+                <button [disabled]="f.invalid">Sign in</button>
+            </form>
+        </div>
+
+        <div class="flex justify-center items-baseline">
+            <i
+                class="fa-solid fa-triangle-exclamation text-3xl text-yellow-300"></i>
+            &nbsp;
+            <span class="mt-12 text-center text-2xl text-white font-semibold">
+                AUTHORIZED PERSONNEL ONLY!</span
+            >
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.card {
+    @apply w-[400px] border-leafy border;
+}
+
+.card-header {
+    @apply flex justify-between items-start;
+}
+
+.profile {
+    @apply w-20 h-20 rounded border border-leafy shadow-md;
+}
+
+.title {
+    @apply text-2xl text-leafy font-hee font-semibold;
+}
+
+.sub-title {
+    @apply text-xl text-gray-500;
+}
+
+.employee-info {
+    @apply font-semibold text-leafy py-2 px-2 text-lg;
+}
+
+span.employee-info {
+    @apply text-cyanide;
+}

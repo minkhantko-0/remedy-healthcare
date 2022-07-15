@@ -1,0 +1,58 @@
+<div>
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <app-alert
+        (close)="onCloseAlert()"
+        *ngIf="error"
+        [message]="error"></app-alert>
+
+    <div class="header-button-wrapper">
+        <div>
+            <button (click)="onAssign()" class="assign-btn">
+                Assign New Employees <i class="fa-solid fa-address-card"></i>
+            </button>
+        </div>
+
+        <div>
+            <form
+                #f="ngForm"
+                (ngSubmit)="onSearchEmployee(f)"
+                class="flex items-center">
+                <input
+                    class="searchbar"
+                    name="searchContent"
+                    ngModel
+                    placeholder="Search Employees ..."
+                    required
+                    type="text" />
+
+                <button [disabled]="!f.valid" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <select
+            (ngModelChange)="onSelectRole($event)"
+            [(ngModel)]="selected"
+            class="sub-title">
+            <option
+                *ngFor="let employee of employeeRoles"
+                [value]="employee.value">
+                {{ employee.name }}
+            </option>
+        </select>
+        <div class="w-full h-0.5 bg-leafy"></div>
+    </div>
+
+    <div class="flex flex-wrap h-[820px] overflow-y-auto">
+        <div
+            *ngFor="let employee of currentlyShowingResults"
+            class="mx-12 mt-12">
+            <app-employee-card [employee]="employee"></app-employee-card>
+        </div>
+    </div>
+    <div class="w-full h-0.5 bg-leafy"></div>
+</div>

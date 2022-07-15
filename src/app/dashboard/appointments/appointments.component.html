@@ -1,0 +1,48 @@
+<div>
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <app-alert
+        (close)="onCloseAlert()"
+        *ngIf="error"
+        [message]="error"></app-alert>
+
+    <div class="booking-shortcut-wrapper">
+        <h1 class="sub-title">
+            Appointments
+            <span class="cursor-pointer" tippy="Today's Appointments"
+                >< {{ count }} ></span
+            >
+        </h1>
+        <form #f="ngForm" (ngSubmit)="onBookAppt(f)" class="flex items-center">
+            <input
+                class="appt-input"
+                name="doctorEmail"
+                ngModel
+                placeholder="Doctor Email"
+                required
+                type="email" />
+            <input
+                class="appt-input"
+                name="patientEmail"
+                ngModel
+                placeholder="Patient Email"
+                required
+                type="email" />
+            <button [disabled]="!f.valid" class="appt-btn">
+                Make An Appointment
+            </button>
+        </form>
+    </div>
+    <div class="w-full h-0.5 bg-leafy my-12"></div>
+    <h1 class="text-center font-hee text-2xl text-gray-300 mb-12">
+        Appointment History
+    </h1>
+    <div class="w-full h-0.5 bg-leafy"></div>
+    <div align="center" class="h-[820px] overflow-y-auto">
+        <div *ngFor="let appointment of appointments">
+            <app-appointment-card
+                [appointment]="appointment"></app-appointment-card>
+        </div>
+    </div>
+    <div class="w-full h-0.5 bg-leafy"></div>
+</div>
